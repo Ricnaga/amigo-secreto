@@ -1,1 +1,1 @@
-export * from './participantes/VerParticipantes'
+export * from './participantes/VerParticipantes';

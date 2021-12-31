@@ -1,9 +1,9 @@
-import { makeSchema } from "nexus"
-import path from "path"
+import { makeSchema } from 'nexus';
+import path from 'path';
 
-import * as Types from './type'
-import * as Query from './query'
-import * as Mutations from './mutation'
+import * as Types from './type';
+import * as Query from './query';
+import * as Mutations from './mutation';
 
 export const schema = makeSchema({
   types: [Types, Query, Mutations],
@@ -11,4 +11,4 @@ export const schema = makeSchema({
     schema: path.join(__dirname, '..', 'data/schema.graphql'),
     typegen: path.join(__dirname, '..', 'data/nexus.schema.ts'),
   },
-})
+});

@@ -1,1 +1,1 @@
-export * from './participante/ParticipanteType'
+export * from './participante/ParticipanteType';

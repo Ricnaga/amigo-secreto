@@ -1,4 +1,4 @@
-import { nonNull, nullable, queryField, stringArg } from "nexus";
+import { nonNull, nullable, queryField, stringArg } from 'nexus';
 
 export const VerParticipantesQueryField = queryField('verParticipantes', {
   type: 'Participante',
@@ -8,9 +8,9 @@ export const VerParticipantesQueryField = queryField('verParticipantes', {
   },
   resolve() {
     return {
-      id: "ID",
-      nome: "Participante 1",
-      presente: "Chinelo"
-    }
+      id: 'ID',
+      nome: 'Participante 1',
+      presente: 'Chinelo',
+    };
   },
-})
+});

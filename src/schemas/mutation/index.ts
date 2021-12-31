@@ -1,1 +1,1 @@
-export * from './sala/salaMutationField'
+export * from './sala/salaMutationField';
