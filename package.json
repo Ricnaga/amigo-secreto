@@ -2,7 +2,7 @@
   "name": "amigo-secreto",
   "version": "1.0.0",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch  node_modules --respawn -r dotenv/config src/server"
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch  node_modules --respawn -r dotenv/config src/shared/infra/http/server"
   },
   "dependencies": {
     "apollo-server": "^3.5.0",
@@ -10,9 +10,11 @@
     "apollo-server-koa": "^3.5.0",
     "dotenv": "^10.0.0",
     "graphql": "15.8.0",
+    "graphql-subscriptions": "^2.0.0",
     "koa": "^2.13.4",
     "nexus": "1.0.0",
-    "subscriptions-transport-ws": "^0.11.0"
+    "subscriptions-transport-ws": "^0.11.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -20,6 +22,7 @@
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
     "@types/koa": "^2.13.4",
+    "@types/uuid": "^8.3.3",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "eslint": "^8.5.0",
