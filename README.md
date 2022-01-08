@@ -1,8 +1,8 @@
  - criar string de código da sala
     - mutation criarSala(nomeSala:string!)
 
- - inserir nome da sala, nome e presente
-    - mutation participarSala(nomeSala:string!, nome:string!, presente:string!)
+ - criar nome da sala, nome e presente
+    - mutation atualizaSalaParticipante(nomeSala:string!, nome:string!, presente:string!)
 
  - com id, altera nome ou presente
     - mutation alterarDadosParticipante(nomeSala:string!, nome:string!, presente:string!)

@@ -17,7 +17,7 @@ export class SalaRepository {
     return SalaRepository.INSTANCE;
   }
 
-  create(nomeSala: string): void {
+  create(nomeSala: string): Sala {
     const sala = new Sala({
       id: v4(),
       nomeSala,
@@ -25,5 +25,7 @@ export class SalaRepository {
     });
 
     this.salas.push(sala);
+
+    return sala;
   }
 }

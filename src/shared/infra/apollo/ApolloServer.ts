@@ -15,7 +15,10 @@ export async function createApolloServer(app: Koa, httpSv: Server) {
     plugins: [destroySubscriptionServer(subscriptionServer)],
   });
 
-  instanceOfApolloServer
-    .start()
-    .then(() => instanceOfApolloServer.applyMiddleware({ app }));
+  instanceOfApolloServer.start().then(() =>
+    instanceOfApolloServer.applyMiddleware({
+      app,
+      path: `/${process.env.GRAPHQL_PATH}`,
+    }),
+  );
 }

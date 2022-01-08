@@ -1,13 +1,17 @@
-import { mutationField, nonNull, stringArg } from 'nexus';
+import { extendType, nonNull, stringArg } from 'nexus';
 import { createSalaService } from '../../../../../../modules/Sala/services';
 
-export const createSalaMutationField = mutationField('criarSala', {
-  type: 'String',
-  args: {
-    nomeSala: nonNull(stringArg()),
-  },
-  resolve(_, args) {
-    createSalaService.execute(args.nomeSala);
-    return `Sala ${args.nomeSala} criada com sucesso !`;
+export const createSalaMutation = extendType({
+  type: 'Mutation',
+  definition(t) {
+    t.field('criarSala', {
+      type: 'Sala',
+      args: {
+        nomeSala: nonNull(stringArg()),
+      },
+      resolve(_, args) {
+        return createSalaService.execute(args.nomeSala);
+      },
+    });
   },
 });

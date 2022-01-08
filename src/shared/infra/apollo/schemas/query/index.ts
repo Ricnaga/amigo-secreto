@@ -1,1 +1,1 @@
-export * from './participante/VerParticipantes';
+export * from './participante/VerParticipantesQueryField';
