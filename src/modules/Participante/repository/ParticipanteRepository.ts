@@ -1,5 +1,6 @@
 import { v4 } from 'uuid';
 import ICreateParticipanteDTO from '../dto/ICreateParticipanteDTO';
+import IUpdateParticipanteDTO from '../dto/IUpdateParticipanteDTO';
 import { Participante } from '../model/participante';
 
 export class ParticipanteRepository {
@@ -28,6 +29,19 @@ export class ParticipanteRepository {
     });
 
     this.participantes.push(participante);
+
+    return participante;
+  }
+
+  findById(id: string): Participante {
+    return this.participantes.find((participante) => participante.id === id);
+  }
+
+  update({ id, nome, presente }: IUpdateParticipanteDTO): Participante {
+    const participante = this.findById(id);
+
+    participante.nome = nome;
+    participante.presente = presente;
 
     return participante;
   }

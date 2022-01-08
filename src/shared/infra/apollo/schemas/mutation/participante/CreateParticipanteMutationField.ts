@@ -1,7 +1,7 @@
 import { extendType, nonNull, stringArg } from 'nexus';
-import { createParticipanteService } from '../../../../../../modules/Participante/services';
+import { createParticipanteService } from '../../../../../../modules/Participante/services/CreateParticipante';
 
-export const createParticipanteMutation = extendType({
+export const createParticipanteMutationField = extendType({
   type: 'Mutation',
   definition(t) {
     t.field('criarParticipante', {

@@ -8,7 +8,21 @@ import * as Mutations from './mutation';
 export const schema = makeSchema({
   types: [Types, Query, Mutations],
   outputs: {
-    schema: path.join(__dirname, '..', 'data/schema.graphql'),
-    typegen: path.join(__dirname, '..', 'data/nexus.schema.ts'),
+    schema: path.join(
+      __dirname,
+      '..',
+      '..',
+      '..',
+      '..',
+      'data/nexus-schema.graphql',
+    ),
+    typegen: path.join(
+      __dirname,
+      '..',
+      '..',
+      '..',
+      '..',
+      'data/nexus-schema.d.ts',
+    ),
   },
 });

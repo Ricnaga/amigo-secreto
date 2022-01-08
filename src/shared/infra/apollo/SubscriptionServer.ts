@@ -12,7 +12,7 @@ export function createSubscriptionServer(
       execute,
       subscribe,
     },
-    { server, path: `/${process.env.GRAPHQL_PATH}` },
+    { server, path: process.env.GRAPHQL_PATH },
   );
 
   return { subscriptionServer };

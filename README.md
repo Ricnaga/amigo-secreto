@@ -5,7 +5,7 @@
     - mutation atualizaSalaParticipante(nomeSala:string!, nome:string!, presente:string!)
 
  - com id, altera nome ou presente
-    - mutation alterarDadosParticipante(nomeSala:string!, nome:string!, presente:string!)
+    - mutation alterarDadosParticipante(id:string!, nome:string!, presente:string!)
 
  - consultar participantes, filtro de participantes
     - query verParticipantes(nomeSala:string!, idParticipante:string)
