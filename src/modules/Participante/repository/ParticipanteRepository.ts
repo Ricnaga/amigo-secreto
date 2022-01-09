@@ -34,15 +34,51 @@ export class ParticipanteRepository {
   }
 
   findById(id: string): Participante {
-    return this.participantes.find((participante) => participante.id === id);
+    const participante = this.participantes.find(
+      (participante) => participante.id === id,
+    );
+
+    return (
+      participante || {
+        id: '',
+        sala: '',
+        nome: '',
+        presente: '',
+        idAmigoSecreto: '',
+        created_at: new Date(),
+      }
+    );
   }
 
-  update({ id, nome, presente }: IUpdateParticipanteDTO): Participante {
+  updateParticipante({
+    id,
+    nome,
+    presente,
+  }: IUpdateParticipanteDTO): Participante {
     const participante = this.findById(id);
 
     participante.nome = nome;
     participante.presente = presente;
 
     return participante;
+  }
+
+  updateAmigosSecretos(nomeSala: string) {
+    const participantes = this.participantes.filter(
+      (participante) => participante.sala === nomeSala,
+    );
+
+    const updateAmigo = participantes.map((participante, index) => {
+      if (index === participantes.length - 1) {
+        participante.idAmigoSecreto = participantes[0].id;
+
+        return participante;
+      }
+
+      participante.idAmigoSecreto = participantes[index + 1].id;
+      return participante;
+    });
+
+    return updateAmigo;
   }
 }

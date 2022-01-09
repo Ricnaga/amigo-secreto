@@ -6,5 +6,6 @@ export const salaType = objectType({
   definition(t: ObjectDefinitionBlock<'Sala'>) {
     t.id('id');
     t.string('nome');
+    t.boolean('maxParticipantes');
   },
 });

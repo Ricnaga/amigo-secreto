@@ -20,12 +20,12 @@ export class SalaRepository {
   create(nomeSala: string): Sala {
     const sala = new Sala({
       id: v4(),
-      nomeSala,
+      nome: nomeSala,
       created_at: new Date(),
+      maxParticipantes: false,
     });
 
     this.salas.push(sala);
-
     return sala;
   }
 }

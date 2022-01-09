@@ -4,7 +4,7 @@ import { updateParticipanteService } from '../../../../../../modules/Participant
 export const updateParticipanteMutationField = extendType({
   type: 'Mutation',
   definition(t) {
-    t.field('alterarParticipante', {
+    t.field('atualizarParticipante', {
       type: 'Participante',
       args: {
         id: nonNull(idArg()),

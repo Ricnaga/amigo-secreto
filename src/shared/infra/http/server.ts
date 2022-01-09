@@ -1,5 +1,5 @@
 import { createServer } from 'http';
-import { createApolloServer } from '../apollo/ApolloServer';
+import { createApolloServer } from '../apollo/server';
 import { koaApp, koaServerRequest } from './koaApp';
 
 const httpServer = createServer(koaServerRequest);

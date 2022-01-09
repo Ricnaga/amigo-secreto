@@ -4,6 +4,7 @@ export class Participante {
   presente: string;
   sala: string;
   created_at: Date;
+  idAmigoSecreto?: string;
 
   constructor(participante: Participante) {
     this.id = participante.id;

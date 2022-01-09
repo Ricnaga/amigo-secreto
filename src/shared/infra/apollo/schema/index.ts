@@ -7,6 +7,7 @@ import * as Mutations from './mutation';
 
 export const schema = makeSchema({
   types: [Types, Query, Mutations],
+  shouldGenerateArtifacts: true,
   outputs: {
     schema: path.join(
       __dirname,
@@ -24,5 +25,9 @@ export const schema = makeSchema({
       '..',
       'data/nexus-schema.d.ts',
     ),
+  },
+  contextType: {
+    module: path.join(__dirname, '..', 'server/context.ts'),
+    export: 'ApolloContext',
   },
 });
