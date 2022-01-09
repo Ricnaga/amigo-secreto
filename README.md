@@ -1,23 +1,23 @@
- - criar string de código da sala
+ - criar sala
     - mutation criarSala(nomeSala:string!)
 
- - criar nome da sala, nome e presente
-    - mutation atualizaSalaParticipante(nomeSala:string!, nome:string!, presente:string!)
+ - criar participante
+    - mutation criarParticipante(nomeSala:string!, nome:string!, presente:string!)
 
- - com id, altera nome ou presente
-    - mutation alterarDadosParticipante(id:string!, nome:string!, presente:string!)
+ - bloquear sala
+    - mutation bloquearSala(nomeSala:string!)
 
- - consultar participantes, filtro de participantes
-    - query verParticipantes(nomeSala:string!, idParticipante:string)
+ - dado id do participante, atualiza dados
+    - mutation atualizarParticipante(id:string!, nome:string!, presente:string!)
 
- - com id, consulta qual amigo secreto e presente retirou
-    - query checarAmigoSecreto(nomeSala:string!, id:string!)
+ - atualizar amigo secreto de todos os participantes
+    - mutation atualizaAmigosSecretos(nomeSala:string!)
 
- - consultar amigo secreto e presente de todos os participantes
-    - query verAmigoSecreto(nomeSala:string!)
+ - listar todos os participantes e amigo secreto
+    - query verAmigosSecretos(nomeSala:string!)
 
- - retirar amigo secreto - não pode retirar 2x
-    - mutation retirarAmigoSecreto(id:string!)
+ - dado id do participante, listar amigo secreto e presente
+    - query listarAmigoSecreto(nomeSala:string!, id:string!)
 
  - realtime quem ja retirou e quem falta
     - mutation amigoSecretoRetirado(nomeSala:string!, idParticipante:string!, idAmigoSecreto:string!)

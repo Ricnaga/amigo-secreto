@@ -17,6 +17,14 @@ export class SalaRepository {
     return SalaRepository.INSTANCE;
   }
 
+  updateMaxParticipantes(nomeSala: string): Sala {
+    const sala = this.salas.find((sala) => sala.nome === nomeSala);
+    if (!sala) throw new Error('');
+    sala.maxParticipantes = true;
+
+    return sala;
+  }
+
   create(nomeSala: string): Sala {
     const sala = new Sala({
       id: v4(),

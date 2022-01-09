@@ -4,7 +4,7 @@ import { updateAmigosSecretosService } from '../../../../../../modules/Participa
 export const UpdateAmigoSecretoMutationField = extendType({
   type: 'Mutation',
   definition(t) {
-    t.field('atualizaAmigosSecretos', {
+    t.field('atualizarAmigosSecretos', {
       type: list('Participante'),
       args: {
         nomeSala: nonNull(stringArg()),

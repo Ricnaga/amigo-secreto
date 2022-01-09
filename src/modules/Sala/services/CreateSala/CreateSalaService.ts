@@ -1,4 +1,4 @@
-import { SalaRepository } from '../repository/SalaRepository';
+import { SalaRepository } from '../../repository/SalaRepository';
 
 export class CreateSalaService {
   constructor(private _salaRepository: SalaRepository) {}

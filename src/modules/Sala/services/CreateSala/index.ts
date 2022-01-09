@@ -1,4 +1,4 @@
-import { SalaRepository } from '../repository/SalaRepository';
+import { SalaRepository } from '../../repository/SalaRepository';
 import { CreateSalaService } from './CreateSalaService';
 
 const salaRepository = SalaRepository.getInstance();

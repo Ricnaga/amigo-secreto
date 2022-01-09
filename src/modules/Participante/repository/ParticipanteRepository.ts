@@ -38,16 +38,9 @@ export class ParticipanteRepository {
       (participante) => participante.id === id,
     );
 
-    return (
-      participante || {
-        id: '',
-        sala: '',
-        nome: '',
-        presente: '',
-        idAmigoSecreto: '',
-        created_at: new Date(),
-      }
-    );
+    if (!participante) throw new Error('');
+
+    return participante;
   }
 
   updateParticipante({
@@ -63,10 +56,14 @@ export class ParticipanteRepository {
     return participante;
   }
 
-  updateAmigosSecretos(nomeSala: string) {
-    const participantes = this.participantes.filter(
+  listParticipantes(nomeSala: string): Array<Participante> {
+    return this.participantes.filter(
       (participante) => participante.sala === nomeSala,
     );
+  }
+
+  updateAmigosSecretos(nomeSala: string): Array<Participante> {
+    const participantes = this.listParticipantes(nomeSala);
 
     const updateAmigo = participantes.map((participante, index) => {
       if (index === participantes.length - 1) {

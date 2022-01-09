@@ -1,1 +1,1 @@
-export * from './participante/VerParticipantesQueryField';
+export * from './participante/verAmigosSecretos';

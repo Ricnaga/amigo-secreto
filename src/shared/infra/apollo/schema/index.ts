@@ -26,8 +26,4 @@ export const schema = makeSchema({
       'data/nexus-schema.d.ts',
     ),
   },
-  contextType: {
-    module: path.join(__dirname, '..', 'server/context.ts'),
-    export: 'ApolloContext',
-  },
 });
