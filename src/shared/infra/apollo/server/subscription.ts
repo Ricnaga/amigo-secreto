@@ -1,21 +1,33 @@
 import { execute, subscribe, GraphQLSchema } from 'graphql';
+import { PubSub } from 'graphql-subscriptions';
 import { Server } from 'http';
 import { SubscriptionServer } from 'subscriptions-transport-ws';
+
+type SubscriptionServerContext = {
+  subscriptionServer: SubscriptionServer;
+  amigoSecretoPubSub: PubSub;
+};
 
 export function createSubscriptionServer(
   schema: GraphQLSchema,
   server: Server,
-) {
+): SubscriptionServerContext {
+  const amigoSecretoPubSub = new PubSub();
   const subscriptionServer = SubscriptionServer.create(
     {
       schema,
       execute,
       subscribe,
+      onConnect() {
+        return {
+          amigoSecretoPubSub,
+        };
+      },
     },
     { server, path: process.env.GRAPHQL_PATH },
   );
 
-  return { subscriptionServer };
+  return { subscriptionServer, amigoSecretoPubSub };
 }
 
 export function destroySubscriptionServer(
