@@ -1,5 +1,5 @@
 import { idArg, nonNull, queryField } from 'nexus';
-import { listParticipanteService } from '../../../../../../modules/Participante/services/ListParticipante';
+import { listParticipanteService } from '../../../../../../../modules/Participante/services/ListParticipante';
 import { AMIGO_SECRETO_EVENT_LABEL } from '../../subscription/eventLabel';
 
 export const VerAmigoSecretoQueryField = queryField('verAmigoSecreto', {

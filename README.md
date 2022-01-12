@@ -17,8 +17,8 @@
     - query verAmigosSecretos(nomeSala:string!)
 
  - dado id do participante, listar amigo secreto e presente
-    - query listarAmigoSecreto(nomeSala:string!, id:string!)
+    - query listarAmigoSecreto(id:string!)
 
  - realtime quem ja retirou e quem falta
-    - mutation amigoSecretoRetirado(nomeSala:string!, idParticipante:string!, idAmigoSecreto:string!)
+    - query listarAmigoSecreto(id:string!)
     - subscription liveAmigoSecreto()

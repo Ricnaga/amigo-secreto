@@ -1,5 +1,5 @@
 import { extendType, nonNull, stringArg } from 'nexus';
-import { updateMaxParticipantesSala } from '../../../../../../modules/Sala/services/UpdateMaxParticipantesSala';
+import { updateMaxParticipantesSala } from '../../../../../../../modules/Sala/services/UpdateMaxParticipantesSala';
 
 export const updateSalaMutationField = extendType({
   type: 'Mutation',

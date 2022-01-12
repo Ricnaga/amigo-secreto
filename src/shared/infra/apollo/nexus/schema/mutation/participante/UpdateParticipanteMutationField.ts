@@ -1,5 +1,5 @@
 import { extendType, idArg, nonNull, stringArg } from 'nexus';
-import { updateParticipanteService } from '../../../../../../modules/Participante/services/UpdateParticipante';
+import { updateParticipanteService } from '../../../../../../../modules/Participante/services/UpdateParticipante';
 
 export const updateParticipanteMutationField = extendType({
   type: 'Mutation',

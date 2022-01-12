@@ -24,7 +24,7 @@ export function createSubscriptionServer(
         };
       },
     },
-    { server, path: process.env.GRAPHQL_PATH },
+    { server, path: `/${process.env.NEXUS_GRAPHQL_PATH}` },
   );
 
   return { subscriptionServer, amigoSecretoPubSub };

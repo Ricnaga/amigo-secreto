@@ -23,7 +23,7 @@ export async function createApolloServer(app: Koa, httpSv: Server) {
   instanceOfApolloServer.start().then(() =>
     instanceOfApolloServer.applyMiddleware({
       app,
-      path: process.env.GRAPHQL_PATH,
+      path: `/${process.env.NEXUS_GRAPHQL_PATH}`,
     }),
   );
 }
