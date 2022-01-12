@@ -2,6 +2,7 @@ import { execute, subscribe, GraphQLSchema } from 'graphql';
 import { PubSub } from 'graphql-subscriptions';
 import { Server } from 'http';
 import { SubscriptionServer } from 'subscriptions-transport-ws';
+import { apolloPath } from './config';
 
 type SubscriptionServerContext = {
   subscriptionServer: SubscriptionServer;
@@ -24,7 +25,7 @@ export function createSubscriptionServer(
         };
       },
     },
-    { server, path: `/${process.env.NEXUS_GRAPHQL_PATH}` },
+    { server, path: apolloPath },
   );
 
   return { subscriptionServer, amigoSecretoPubSub };

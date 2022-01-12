@@ -2,6 +2,7 @@ import { ApolloServer } from 'apollo-server-koa';
 import { Server } from 'http';
 import Koa from 'koa';
 import { schema } from '../schema';
+import { apolloPath } from './config';
 import { apolloServerContext } from './context';
 import {
   createSubscriptionServer,
@@ -23,7 +24,7 @@ export async function createApolloServer(app: Koa, httpSv: Server) {
   instanceOfApolloServer.start().then(() =>
     instanceOfApolloServer.applyMiddleware({
       app,
-      path: `/${process.env.NEXUS_GRAPHQL_PATH}`,
+      path: apolloPath,
     }),
   );
 }
