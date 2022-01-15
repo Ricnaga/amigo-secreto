@@ -2,18 +2,22 @@
   "name": "amigo-secreto",
   "version": "1.0.0",
   "scripts": {
-    "nexus": "ts-node-dev --inspect --transpile-only --ignore-watch  node_modules --respawn -r dotenv/config src/shared/infra/http/server"
+    "nexus": "ts-node-dev --inspect=8000 --transpile-only --ignore-watch  node_modules --respawn -r dotenv/config src/shared/infra/apollo/nexus/server",
+    "typegql": "ts-node-dev --inspect=9000 --transpile-only --ignore-watch  node_modules --respawn -r dotenv/config src/shared/infra/apollo/typegraphql/server"
   },
   "dependencies": {
     "apollo-server": "^3.5.0",
     "apollo-server-core": "^3.5.0",
     "apollo-server-koa": "^3.5.0",
+    "class-validator": "^0.13.2",
     "dotenv": "^10.0.0",
     "graphql": "15.8.0",
     "graphql-subscriptions": "^2.0.0",
     "koa": "^2.13.4",
     "nexus": "1.0.0",
+    "reflect-metadata": "^0.1.13",
     "subscriptions-transport-ws": "^0.11.0",
+    "type-graphql": "^1.1.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

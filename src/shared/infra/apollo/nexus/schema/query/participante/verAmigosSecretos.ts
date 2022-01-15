@@ -1,7 +1,7 @@
 import { list, nonNull, queryField, stringArg } from 'nexus';
 import { listParticipantesService } from '../../../../../../../modules/Participante/services/ListParticipantes';
 
-export const VerAmigosSecretosQueryField = queryField('VerAmigosSecretos', {
+export const VerAmigosSecretosQueryField = queryField('verAmigosSecretos', {
   type: nonNull(list('AmigoSecreto')),
   args: {
     nomeSala: nonNull(stringArg()),

@@ -1,30 +1,12 @@
-import { ApolloServer } from 'apollo-server-koa';
-import { Server } from 'http';
-import Koa from 'koa';
-import { schema } from '../schema';
-import { apolloPath } from './config';
-import { apolloServerContext } from './context';
-import {
-  createSubscriptionServer,
-  destroySubscriptionServer,
-} from './subscription';
+import { createServer } from 'http';
+import { createApolloServer } from '..';
+import { koaApp, koaServerRequest } from '../../../http/koaApp';
 
-export async function createApolloServer(app: Koa, httpSv: Server) {
-  const { subscriptionServer, amigoSecretoPubSub } = createSubscriptionServer(
-    schema,
-    httpSv,
-  );
+const httpServer = createServer(koaServerRequest);
+createApolloServer(koaApp, httpServer);
 
-  const instanceOfApolloServer = new ApolloServer({
-    schema,
-    plugins: [destroySubscriptionServer(subscriptionServer)],
-    context: apolloServerContext(amigoSecretoPubSub),
-  });
-
-  instanceOfApolloServer.start().then(() =>
-    instanceOfApolloServer.applyMiddleware({
-      app,
-      path: apolloPath,
-    }),
-  );
-}
+httpServer.listen(process.env.NEXUS_PORT, () =>
+  console.log(
+    `Is Up on http://localhost:${process.env.NEXUS_PORT}/${process.env.NEXUS_GRAPHQL_PATH} - 'Quis custodiet ipsos custodes? 🤔'!`,
+  ),
+);
