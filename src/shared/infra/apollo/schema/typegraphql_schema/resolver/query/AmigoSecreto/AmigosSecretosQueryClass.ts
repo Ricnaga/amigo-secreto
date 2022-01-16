@@ -1,5 +1,5 @@
+import { listParticipantesService } from '@modules/Participante/services/ListParticipantes';
 import { Arg, Query, Resolver } from 'type-graphql';
-import { listParticipantesService } from '../../../../../../../../modules/Participante/services/ListParticipantes';
 import { AmigoSecretoTypeClass } from '../../type/amigoSecreto/AmigoSecretoTypeClass';
 
 @Resolver()

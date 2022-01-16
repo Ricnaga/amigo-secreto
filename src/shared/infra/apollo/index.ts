@@ -19,7 +19,7 @@ export async function createApolloServer(
     httpSv,
     path,
   );
-  console.log(path);
+
   const instanceOfApolloServer = new ApolloServer({
     schema,
     plugins: [destroySubscriptionServer(subscriptionServer)],

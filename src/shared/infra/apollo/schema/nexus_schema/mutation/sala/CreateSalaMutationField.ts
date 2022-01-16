@@ -1,5 +1,5 @@
+import { createSalaService } from '@modules/Sala/services/CreateSala';
 import { extendType, nonNull, stringArg } from 'nexus';
-import { createSalaService } from '../../../../../../../modules/Sala/services/CreateSala';
 
 export const createSalaMutation = extendType({
   type: 'Mutation',

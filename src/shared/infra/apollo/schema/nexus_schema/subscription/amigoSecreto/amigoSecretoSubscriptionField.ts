@@ -1,5 +1,5 @@
+import { Participante } from '@modules/Participante/model/participante';
 import { subscriptionField } from 'nexus';
-import { Participante } from '../../../../../../../modules/Participante/model/participante';
 import { AMIGO_SECRETO_EVENT_LABEL } from '../eventLabel';
 
 type AmigoSecreto = {

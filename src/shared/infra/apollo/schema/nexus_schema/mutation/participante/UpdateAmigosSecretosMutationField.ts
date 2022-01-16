@@ -1,5 +1,5 @@
+import { updateAmigosSecretosService } from '@modules/Participante/services/UpdateAmigosSecretos';
 import { extendType, list, nonNull, stringArg } from 'nexus';
-import { updateAmigosSecretosService } from '../../../../../../../modules/Participante/services/UpdateAmigosSecretos';
 
 export const UpdateAmigoSecretoMutationField = extendType({
   type: 'Mutation',

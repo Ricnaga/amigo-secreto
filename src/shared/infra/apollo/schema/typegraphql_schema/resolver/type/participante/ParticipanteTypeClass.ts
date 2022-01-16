@@ -1,13 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-unused-vars */
 import { Field, ID, ObjectType } from 'type-graphql';
 
 @ObjectType()
 export class ParticipanteTypeClass {
-  @Field((type) => ID)
+  @Field(() => ID)
   id!: string;
 
-  @Field((type) => ID)
+  @Field(() => ID)
   idAmigoSecreto!: string;
 
   @Field()

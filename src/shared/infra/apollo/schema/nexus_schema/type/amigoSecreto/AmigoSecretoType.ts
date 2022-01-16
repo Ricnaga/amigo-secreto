@@ -1,6 +1,6 @@
+import { listAmigoSecretoService } from '@modules/Participante/services/ListAmigoSecreto';
 import { objectType } from 'nexus';
 import { ObjectDefinitionBlock } from 'nexus/dist/blocks';
-import { listAmigoSecretoService } from '../../../../../../../modules/Participante/services/ListAmigoSecreto';
 
 export const amigoSecretoType = objectType({
   name: 'AmigoSecreto',

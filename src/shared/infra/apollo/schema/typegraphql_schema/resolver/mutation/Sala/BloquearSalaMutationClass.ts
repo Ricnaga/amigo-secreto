@@ -1,5 +1,5 @@
+import { updateMaxParticipantesSala } from '@modules/Sala/services/UpdateMaxParticipantesSala';
 import { Arg, Mutation, Resolver } from 'type-graphql';
-import { updateMaxParticipantesSala } from '../../../../../../../../modules/Sala/services/UpdateMaxParticipantesSala';
 import { SalaTypeClass } from '../../type/sala/SalaClass';
 
 @Resolver()

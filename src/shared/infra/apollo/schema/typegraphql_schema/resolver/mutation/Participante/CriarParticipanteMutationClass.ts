@@ -1,5 +1,5 @@
+import { createParticipanteService } from '@modules/Participante/services/CreateParticipante';
 import { Arg, Mutation, Resolver } from 'type-graphql';
-import { createParticipanteService } from '../../../../../../../../modules/Participante/services/CreateParticipante';
 import { ParticipanteTypeClass } from '../../type/participante/ParticipanteTypeClass';
 
 @Resolver()

@@ -1,5 +1,5 @@
+import { updateParticipanteService } from '@modules/Participante/services/UpdateParticipante';
 import { Args, ArgsType, Field, ID, Mutation, Resolver } from 'type-graphql';
-import { updateParticipanteService } from '../../../../../../../../modules/Participante/services/UpdateParticipante';
 import { ParticipanteTypeClass } from '../../type/participante/ParticipanteTypeClass';
 
 @ArgsType()

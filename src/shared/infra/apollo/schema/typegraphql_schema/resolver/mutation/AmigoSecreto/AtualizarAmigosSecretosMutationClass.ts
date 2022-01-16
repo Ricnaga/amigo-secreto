@@ -1,5 +1,5 @@
+import { updateAmigosSecretosService } from '@modules/Participante/services/UpdateAmigosSecretos';
 import { Arg, Mutation, Resolver } from 'type-graphql';
-import { updateAmigosSecretosService } from '../../../../../../../../modules/Participante/services/UpdateAmigosSecretos';
 import { ParticipanteTypeClass } from '../../type/participante/ParticipanteTypeClass';
 
 @Resolver()
