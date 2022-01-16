@@ -5,8 +5,8 @@ export class ParticipanteTypeClass {
   @Field(() => ID)
   id!: string;
 
-  @Field(() => ID)
-  idAmigoSecreto!: string;
+  @Field(() => ID, { nullable: true })
+  idAmigoSecreto?: string;
 
   @Field()
   nome!: string;

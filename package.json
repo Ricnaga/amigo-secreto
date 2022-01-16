@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint --ext .ts src/ --fix",
-    "test": "jest",
-    "nexus": "ts-node-dev --inspect=8000 --transpile-only --ignore-watch  node_modules --respawn -r dotenv/config src/shared/infra/apollo/schema/nexus_schema",
-    "typegql": "ts-node-dev --inspect=9000 --transpile-only --ignore-watch  node_modules --respawn -r dotenv/config src/shared/infra/apollo/schema/typegraphql_schema"
+    "test": "jest --runInBand --detectOpenHandles",
+    "nexus": "ts-node-dev -r tsconfig-paths/register --inspect=8000 --transpile-only --ignore-watch  node_modules --respawn -r dotenv/config src/shared/infra/apollo/schema/nexus_schema",
+    "typegql": "ts-node-dev -r tsconfig-paths/register --inspect=9000 --transpile-only --ignore-watch node_modules --respawn -r dotenv/config src/shared/infra/apollo/schema/typegraphql_schema"
   },
   "dependencies": {
     "apollo-server": "^3.5.0",
@@ -19,6 +19,7 @@
     "nexus": "1.0.0",
     "reflect-metadata": "^0.1.13",
     "subscriptions-transport-ws": "^0.11.0",
+    "tsconfig-paths": "^3.12.0",
     "type-graphql": "^1.1.1",
     "uuid": "^8.3.2"
   },

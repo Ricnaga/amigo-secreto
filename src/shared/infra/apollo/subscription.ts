@@ -3,7 +3,7 @@ import { PubSub } from 'graphql-subscriptions';
 import { Server } from 'http';
 import { SubscriptionServer } from 'subscriptions-transport-ws';
 
-type SubscriptionServerContext = {
+export type SubscriptionServerContext = {
   subscriptionServer: SubscriptionServer;
   amigoSecretoPubSub: PubSub;
 };

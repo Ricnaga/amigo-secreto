@@ -1,5 +1,7 @@
 import { listParticipanteService } from '@modules/Participante/services/ListParticipante';
-import { Args, ArgsType, Field, ID, Query, Resolver } from 'type-graphql';
+import { SubscriptionServerContext } from 'shared/infra/apollo/subscription';
+import { Args, ArgsType, Ctx, Field, ID, Query, Resolver } from 'type-graphql';
+import { AMIGO_SECRETO_TOPIC } from '../../subscription/subscriptionTopics';
 import { AmigoSecretoTypeClass } from '../../type/amigoSecreto/AmigoSecretoTypeClass';
 
 @ArgsType()
@@ -11,7 +13,14 @@ class AmigoSecretoQueryArgs {
 @Resolver()
 export class AmigoSecretoQueryClass {
   @Query(() => AmigoSecretoTypeClass)
-  async verAmigoSecreto(@Args() { id }: AmigoSecretoQueryArgs) {
-    return listParticipanteService.execute(id);
+  async verAmigoSecreto(
+    @Args() { id }: AmigoSecretoQueryArgs,
+    @Ctx() { amigoSecretoPubSub }: SubscriptionServerContext,
+  ) {
+    const listarParticipante = listParticipanteService.execute(id);
+    amigoSecretoPubSub.publish(AMIGO_SECRETO_TOPIC, {
+      liveAmigoSecreto: listarParticipante,
+    });
+    return listarParticipante;
   }
 }

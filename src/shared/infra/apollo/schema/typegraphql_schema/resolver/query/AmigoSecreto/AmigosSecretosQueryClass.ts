@@ -4,7 +4,7 @@ import { AmigoSecretoTypeClass } from '../../type/amigoSecreto/AmigoSecretoTypeC
 
 @Resolver()
 export class AmigosSecretosQueryClass {
-  @Query(() => AmigoSecretoTypeClass)
+  @Query(() => [AmigoSecretoTypeClass])
   async verAmigosSecretos(@Arg('nomeSala') nomeSala: string) {
     return listParticipantesService.execute(nomeSala);
   }

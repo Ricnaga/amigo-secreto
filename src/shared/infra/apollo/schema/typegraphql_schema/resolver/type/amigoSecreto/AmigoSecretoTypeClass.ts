@@ -1,4 +1,5 @@
-import { Field, ID, ObjectType } from 'type-graphql';
+import { listAmigoSecretoService } from '@modules/Participante/services/ListAmigoSecreto';
+import { Field, ID, ObjectType, Root } from 'type-graphql';
 import { ParticipanteTypeClass } from '../participante/ParticipanteTypeClass';
 
 @ObjectType()
@@ -15,6 +16,10 @@ export class AmigoSecretoTypeClass {
   @Field()
   presente!: string;
 
-  @Field()
-  amigoSecreto!: ParticipanteTypeClass;
+  @Field(() => ParticipanteTypeClass)
+  amigoSecreto(
+    @Root() participante: ParticipanteTypeClass,
+  ): ParticipanteTypeClass {
+    return listAmigoSecretoService.execute(participante.id);
+  }
 }
