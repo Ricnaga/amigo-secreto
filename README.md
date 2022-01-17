@@ -16,6 +16,7 @@
 #### - Mutation
 #### - Query
 #### - Subscription
+#### - Scalar
 #### - TDD
 
 ## <div align="center"> Sumário </div>
