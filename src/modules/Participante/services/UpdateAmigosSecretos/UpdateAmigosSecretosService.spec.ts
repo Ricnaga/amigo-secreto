@@ -24,7 +24,7 @@ describe('UpdateAmigosSecretosService', () => {
     });
   });
 
-  it('should be able to update all participantes amigos secretos', () => {
+  it('should be able to update all participants and his secret friends', () => {
     const updatedParticipantes =
       updateAmigosSecretosService.execute('Nome Sala');
     expect(updatedParticipantes[0].idAmigoSecreto).toEqual(
@@ -32,7 +32,7 @@ describe('UpdateAmigosSecretosService', () => {
     );
   });
 
-  it('should not be able to update all participantes amigos secretos with non-existent room name', () => {
+  it('should not be able to update all participants secret friends with non-existent room name', () => {
     expect(() => updateAmigosSecretosService.execute('')).toThrowError(
       'Nome da sala inválido',
     );

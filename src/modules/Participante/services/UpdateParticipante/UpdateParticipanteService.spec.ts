@@ -12,7 +12,7 @@ describe('UpdateParticipanteService', () => {
     );
   });
 
-  it('should be able to update participante data', () => {
+  it('should be able to update participant data', () => {
     const participante = participanteRepository.create({
       nome: 'Nome teste',
       nomeSala: 'Nome da sala teste',
@@ -29,7 +29,7 @@ describe('UpdateParticipanteService', () => {
     expect(updatedParticipante.presente).toBe('presente teste1');
   });
 
-  it('should not be able to update a non-existent participante', () => {
+  it('should not be able to update a non-existent participant', () => {
     expect(() =>
       updateParticipanteService.execute({
         id: '',
@@ -39,7 +39,7 @@ describe('UpdateParticipanteService', () => {
     ).toThrowError('Esse participante não existe');
   });
 
-  it('should not be able to update participante with no name', () => {
+  it('should not be able to update participant with no name', () => {
     const participante = participanteRepository.create({
       nome: 'Nome teste3',
       nomeSala: 'Nome da sala teste3',
@@ -55,7 +55,7 @@ describe('UpdateParticipanteService', () => {
     ).toThrowError('Participante sem nome, verifique novamente');
   });
 
-  it('should not be able to update participante with no presente', () => {
+  it('should not be able to update participant with no gift', () => {
     const participante = participanteRepository.create({
       nome: 'Nome teste4',
       nomeSala: 'Nome da sala teste4',

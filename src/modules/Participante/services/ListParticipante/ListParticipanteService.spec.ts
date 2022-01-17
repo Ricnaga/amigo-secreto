@@ -12,7 +12,7 @@ describe('ListParticipanteService', () => {
     );
   });
 
-  it('should be able to list an amigo secreto and presente', () => {
+  it('should be able to list an secret friend and gift', () => {
     const participante = participanteRepository.create({
       nome: 'Nome teste 1',
       nomeSala: 'Nome Sala',
@@ -24,7 +24,7 @@ describe('ListParticipanteService', () => {
     expect(listParticipante).toHaveProperty('id');
   });
 
-  it('should not be able to list a non-existent amigo secreto', () => {
+  it('should not be able to list a non-existent secret friend', () => {
     expect(() => listParticipanteService.execute('')).toThrowError(
       'Participante inexistente',
     );

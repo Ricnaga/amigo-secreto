@@ -12,7 +12,7 @@ describe('CreateParticipanteService', () => {
     );
   });
 
-  it('should be able to create a new participante', () => {
+  it('should be able to create a new participant', () => {
     const participante = createParticipanteService.execute({
       nome: 'Nome teste1',
       nomeSala: 'Sala Teste1',
@@ -22,7 +22,7 @@ describe('CreateParticipanteService', () => {
     expect(participante).toHaveProperty('id');
   });
 
-  it('should not be able to create two participantes with same name', () => {
+  it('should not be able to create two participants with same name', () => {
     expect(() =>
       createParticipanteService.execute({
         nome: 'Nome teste1',
@@ -32,7 +32,7 @@ describe('CreateParticipanteService', () => {
     ).toThrow('Participante ja existente');
   });
 
-  it('should not be able to create participante with no name', () => {
+  it('should not be able to create participant with no name', () => {
     expect(() =>
       createParticipanteService.execute({
         nome: '',
@@ -42,7 +42,7 @@ describe('CreateParticipanteService', () => {
     ).toThrow('Erro no nome do participante, verifique novamente por favor');
   });
 
-  it('should not be able to create participante with no room name', () => {
+  it('should not be able to create participant with no room name', () => {
     expect(() =>
       createParticipanteService.execute({
         nome: 'Nome teste3',

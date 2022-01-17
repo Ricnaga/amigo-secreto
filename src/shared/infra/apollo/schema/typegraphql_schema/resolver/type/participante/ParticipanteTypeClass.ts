@@ -1,4 +1,5 @@
 import { Field, ID, ObjectType } from 'type-graphql';
+import { NomeScalar } from '../../scalar/NameClass';
 
 @ObjectType()
 export class ParticipanteTypeClass {
@@ -8,7 +9,7 @@ export class ParticipanteTypeClass {
   @Field(() => ID, { nullable: true })
   idAmigoSecreto?: string;
 
-  @Field()
+  @Field(() => NomeScalar)
   nome!: string;
 
   @Field()

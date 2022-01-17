@@ -24,14 +24,14 @@ describe('ListParticipantesService', () => {
     });
   });
 
-  it('should be able to list all participantes and amigos secretos', () => {
+  it('should be able to list all participants and secrets friends', () => {
     const participantes =
       listParticipantesService.execute('Nome da sala teste');
 
     expect(participantes.length).toBe(2);
   });
 
-  it('should not be able to list all participantes with no room name', () => {
+  it('should not be able to list all participants with no room name', () => {
     expect(() => listParticipantesService.execute('')).toThrowError(
       'Sala sem nome, verifique novamente',
     );

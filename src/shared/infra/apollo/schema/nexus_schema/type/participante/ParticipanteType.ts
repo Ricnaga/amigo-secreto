@@ -6,7 +6,7 @@ export const participanteType = objectType({
   definition(t: ObjectDefinitionBlock<'Participante'>) {
     t.id('id');
     t.id('idAmigoSecreto');
-    t.string('nome');
+    t.Nome('nome');
     t.string('presente');
   },
 });
