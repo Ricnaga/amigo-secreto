@@ -6,7 +6,7 @@ import { BloquearSalaMutationClass } from './mutation/Sala/BloquearSalaMutationC
 import { CriarSalaMutationClass } from './mutation/Sala/CriarSalaMutationClass';
 import { AmigoSecretoQueryClass } from './query/AmigoSecreto/AmigoSecretoQueryClass';
 import { AmigosSecretosQueryClass } from './query/AmigoSecreto/AmigosSecretosQueryClass';
-import { LiveAmigoSecretoSubscriptionClass } from './subscription/LiveAmigoSecretoSubscriptionClass';
+import { LiveAmigoSecretoSubscriptionClass } from './subscription/AmigoSecreto/LiveAmigoSecretoSubscriptionClass';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const resolvers: NonEmptyArray<Function> | NonEmptyArray<string> = [

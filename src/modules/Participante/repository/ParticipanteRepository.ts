@@ -33,14 +33,20 @@ export class ParticipanteRepository {
     return participante;
   }
 
-  findById(id: string): Participante {
+  findByName(nome: string): string | null {
     const participante = this.participantes.find(
+      (participante) => participante.nome === nome,
+    );
+
+    return participante?.nome ? participante.nome : null;
+  }
+
+  findById(id: string): Participante {
+    const participanteIndex = this.participantes.findIndex(
       (participante) => participante.id === id,
     );
 
-    if (!participante) throw new Error('');
-
-    return participante;
+    return this.participantes[participanteIndex];
   }
 
   updateParticipante({
@@ -48,12 +54,14 @@ export class ParticipanteRepository {
     nome,
     presente,
   }: IUpdateParticipanteDTO): Participante {
-    const participante = this.findById(id);
+    const participanteIndex = this.participantes.findIndex(
+      (participante) => participante.id === id,
+    );
 
-    participante.nome = nome;
-    participante.presente = presente;
+    this.participantes[participanteIndex].nome = nome;
+    this.participantes[participanteIndex].presente = presente;
 
-    return participante;
+    return this.participantes[participanteIndex];
   }
 
   listParticipantes(nomeSala: string): Array<Participante> {

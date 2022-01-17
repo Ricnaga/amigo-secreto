@@ -1,4 +1,4 @@
-import { listAmigoSecretoService } from '@modules/Participante/services/ListAmigoSecreto';
+import { listParticipanteService } from '@modules/Participante/services/ListParticipante';
 import { objectType } from 'nexus';
 import { ObjectDefinitionBlock } from 'nexus/dist/blocks';
 
@@ -13,7 +13,7 @@ export const amigoSecretoType = objectType({
       type: 'Participante',
       resolve(root) {
         if (!root.idAmigoSecreto) return null;
-        return listAmigoSecretoService.execute(root.idAmigoSecreto);
+        return listParticipanteService.execute(root.idAmigoSecreto);
       },
     });
   },

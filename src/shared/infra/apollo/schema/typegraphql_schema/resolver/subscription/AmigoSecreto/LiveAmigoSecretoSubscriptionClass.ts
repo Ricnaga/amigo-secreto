@@ -1,6 +1,6 @@
 import { Root, Subscription } from 'type-graphql';
-import { AmigoSecretoTypeClass } from '../type/amigoSecreto/AmigoSecretoTypeClass';
-import { AMIGO_SECRETO_TOPIC } from './subscriptionTopics';
+import { AmigoSecretoTypeClass } from '../../type/amigoSecreto/AmigoSecretoTypeClass';
+import { AMIGO_SECRETO_TOPIC } from '../subscriptionTopics';
 
 type AmigoSecreto = {
   liveAmigoSecreto: AmigoSecretoTypeClass;

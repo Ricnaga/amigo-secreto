@@ -25,6 +25,19 @@ export class SalaRepository {
     return sala;
   }
 
+  findByMaxParticipantes(nomeSala: string): boolean | null {
+    const findMaxParticipantes = this.salas.find(
+      (sala) => sala.nome === nomeSala,
+    )?.maxParticipantes;
+
+    return findMaxParticipantes ? findMaxParticipantes : null;
+  }
+
+  findByName(nomeSala: string): string | null {
+    const findSala = this.salas.find((sala) => sala.nome === nomeSala)?.nome;
+    return findSala ? findSala : null;
+  }
+
   create(nomeSala: string): Sala {
     const sala = new Sala({
       id: v4(),
